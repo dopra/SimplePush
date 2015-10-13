@@ -115,8 +115,8 @@ foreach ($tokens as $token) {
     
     $i++;
 
-    // just for testing
-    //usleep(50*1000); // usleep is in us
+    // if too fast Apple closes the connection without feedback
+    usleep(50*1000); // usleep is in us
     // put stream in non blocking
     stream_set_blocking($apns, 0);
     echo "response:";
